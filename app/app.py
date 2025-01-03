@@ -4,7 +4,5 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-# create an endpoint
-@app.get("/hello-world")
-def hello_world():
-    return {"message": "Hello World"}
+
+# create an endpoint for text posts
