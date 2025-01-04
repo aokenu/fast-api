@@ -11,3 +11,9 @@ text_posts = {"1": {"title": "New Post","content": "cool test post"}}
 @app.get("/posts")
 def get_all_posts():
     return text_posts
+
+ 
+# create an endpoint with a path parameter
+@app.get("/posts"/{id})
+def get_post(id: int):
+    
