@@ -16,4 +16,4 @@ def get_all_posts():
 # create an endpoint with a path parameter
 @app.get("/posts"/{id})
 def get_post(id: int):
-    
+    return text_posts.get(id)
