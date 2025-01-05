@@ -32,3 +32,5 @@ def get_post(id: int):
     if id not in text_posts:
         raise HTTPException(status_code=404, detail="Post not found")
     return text_posts.get(id)
+
+# create a post endpoint
