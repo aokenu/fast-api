@@ -4,7 +4,18 @@ from fastapi import FastAPI, HTTPException
 app = FastAPI()
 
 
-text_posts = {1: {"title": "New Post","content": "cool test post"}}
+text_posts = {
+ 1: {'title': 'Random Thought', 'content': 'deploying new features'},
+ 2: {'title': 'Random Thought', 'content': 'fixing bugs in production'},
+ 3: {'title': 'Engineering Notes', 'content': 'testing API endpoints'},
+ 4: {'title': 'Data Life', 'content': 'writing clean Python code'},
+ 5: {'title': 'Pipeline Diary', 'content': 'working on data pipelines'},
+ 6: {'title': 'Debug Session', 'content': 'writing clean Python code'},
+ 7: {'title': 'Data Life', 'content': 'monitoring system performance'},
+ 8: {'title': 'Data Life', 'content': 'cool test post'},
+ 9: {'title': 'System Update', 'content': 'ETL job completed successfully'},
+ 10: {'title': 'New Post', 'content': 'writing clean Python code'}
+}
 
 
 # create an endpoint for text posts
