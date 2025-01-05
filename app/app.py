@@ -20,7 +20,7 @@ text_posts = {
 
 # create an endpoint for text posts
 @app.get("/posts")
-def get_all_posts():
+def get_all_posts(limit: int = None):
     return text_posts
 
  
