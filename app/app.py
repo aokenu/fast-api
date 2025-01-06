@@ -49,3 +49,6 @@ def get_post(id: int):
 
 
 # create a post endpoint
+@app.post("/posts")
+def create_posts():
+    
