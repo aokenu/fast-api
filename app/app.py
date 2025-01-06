@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from sqlalchemy import create_engine, text
-from tabulate import tabulate
+
 
 # connection string for postgresql: postgresql+psycopg2://user:password@host:port/dbname[?key=value&key=value...]
 engine = create_engine("postgresql+psycopg2://postgres:root@localhost:5432/Production_DB")
@@ -38,7 +38,7 @@ def get_sql_query():
         # include the headers
         headers = sql_query.keys()
         rows = sql_query.fetchall()
-        return tabulate(rows, headers=headers, tablefmt="grid")
+        return rows
 
  
 # create an endpoint with a path parameter
