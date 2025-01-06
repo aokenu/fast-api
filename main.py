@@ -1,5 +1,7 @@
 import uvicorn
-# from app.app import app
+from app.app import app
+from sqlalchemy import create_engine, text
+from tabulate import tabulate
 
 
 if __name__ == "__main__":
