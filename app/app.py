@@ -30,6 +30,8 @@ def get_all_posts(limit: int = None):
         return list(text_posts.values())[:limit]
     return text_posts
 
+
+# a get endpoint that return sql query result from postgresql
 @app.get("/get_query")
 def get_sql_query():
     with engine.connect() as conn:
