@@ -3,3 +3,5 @@ from pydantic import BaseModel
 
 # Create a class
 class PostCreate(BaseModel):
+    title: str
+    content: str
