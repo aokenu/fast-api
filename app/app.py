@@ -34,11 +34,7 @@ def get_all_posts(limit: int = None):
 def get_sql_query():
     with engine.connect() as conn:
         sql_query = conn.execute(text('SELECT * FROM "DimCustomer"'))
-        
-        # include the headers
-        headers = sql_query.keys()
-        rows = sql_query.fetchall()
-        return rows
+        return sql_query.mappings().all()
 
  
 # create an endpoint with a path parameter
