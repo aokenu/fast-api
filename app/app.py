@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from sqlalchemy import create_engine, text
-from schemas import PostCreate
+from app.schemas import PostCreate
 
 
 # connection string for postgresql: postgresql+psycopg2://user:password@host:port/dbname[?key=value&key=value...]
