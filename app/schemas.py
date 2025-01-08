@@ -5,3 +5,9 @@ from pydantic import BaseModel
 class PostCreate(BaseModel):
     title: str
     content: str
+
+
+    # Create a class
+class PostResponse(BaseModel):
+    title: str
+    content: str

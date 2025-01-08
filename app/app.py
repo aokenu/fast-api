@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from sqlalchemy import create_engine, text
-from app.schemas import PostCreate
+from app.schemas import PostCreate, PostResponse
 
 
 # connection string for postgresql: postgresql+psycopg2://user:password@host:port/dbname[?key=value&key=value...]
@@ -42,7 +42,7 @@ def get_sql_query():
  
 # create an endpoint with a path parameter
 @app.get("/posts/{id}")
-def get_post(id: int):
+def get_post(id: int) -> PostResponse:
     if id not in text_posts:
         raise HTTPException(status_code=404, detail="Post not found")
     return text_posts.get(id)
@@ -51,7 +51,7 @@ def get_post(id: int):
 
 # create a post endpoint
 @app.post("/posts")
-def create_post(post: PostCreate) -> PostCreate:
+def create_post(post: PostCreate) -> PostResponse:
     new_post = {"title": post.title, "content": post.content}
     text_posts[max(text_posts.keys()) + 1] = new_post
     return new_post
