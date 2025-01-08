@@ -16,4 +16,6 @@ DATABASE_URL = "postgresql+psycopg2://postgres:root@localhost:5432/Production_DB
 class Post(DeclarativeBase):
     __table__ = "posts"
 
-    
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+
+
