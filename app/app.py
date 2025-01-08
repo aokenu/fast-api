@@ -52,4 +52,4 @@ def get_post(id: int):
 # create a post endpoint
 @app.post("/posts")
 def create_post(post: PostCreate):
-    pass
+    text_posts[max(text_posts.keys())]
