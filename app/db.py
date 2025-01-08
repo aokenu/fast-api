@@ -12,3 +12,8 @@ from sqlalchemy.orm import DeclarativeBase, relationship
 DATABASE_URL = "postgresql+psycopg2://postgres:root@localhost:5432/Production_DB"
 
 
+
+class Post(DeclarativeBase):
+    __table__ = "posts"
+
+    

@@ -3,8 +3,6 @@ from sqlalchemy import create_engine, text
 from app.schemas import PostCreate, PostResponse
 
 
-# connection string for postgresql: postgresql+psycopg2://user:password@host:port/dbname[?key=value&key=value...]
-engine = create_engine("postgresql+psycopg2://postgres:root@localhost:5432/Production_DB")
 
 # create a fastapi object
 app = FastAPI()
