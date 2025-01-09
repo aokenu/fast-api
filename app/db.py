@@ -32,5 +32,6 @@ async def create_db_and_tables():
         await conn.run_sync(DeclarativeBase.metabase.create_all)
 
 
-async def get_async_session() -> Asy:
-    ncGenerator[AsyncSession, None]
+async def get_async_session() -> AsyncGenerator[AsyncSession, None]:
+    async with async_session_maker() as session:
+        yeild session
