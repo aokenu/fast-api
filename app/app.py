@@ -4,6 +4,7 @@ from app.schemas import PostCreate, PostResponse
 
 
 
+
 # create a fastapi object
 app = FastAPI()
 
