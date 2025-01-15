@@ -15,7 +15,7 @@ async def lifespan(app: FastAPI):
 
 
 # create a fastapi object
-app = FastAPI()
+app = FastAPI(lifespan=lifespan)
 
 
 text_posts = {
