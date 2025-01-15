@@ -41,11 +41,11 @@ def get_all_posts(limit: int = None):
 
 
 # a get endpoint that return sql query result from postgresql
-@app.get("/get_query")
-def get_sql_query():
-    with engine.connect() as conn:
-        sql_query = conn.execute(text('SELECT * FROM "DimCustomer"'))
-        return sql_query.mappings().all()
+# @app.get("/get_query")
+# def get_sql_query():
+#     with engine.connect() as conn:
+#         sql_query = conn.execute(text('SELECT * FROM "DimCustomer"'))
+#         return sql_query.mappings().all()
 
  
 # create an endpoint with a path parameter
