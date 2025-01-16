@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from sqlalchemy import create_engine, text
-from app.schemas import PostCreate, PostResponse
+from app.schemas import PostResponse
 from app.db import Post, create_db_and_tables, get_async_session
 from sqlalchemy.ext.asyncio import AsyncSession
 from contextlib import asynccontextmanager
@@ -59,7 +59,7 @@ def get_post(id: int) -> PostResponse:
 
 # create a post endpoint
 @app.post("/posts")
-def create_post(post: PostCreate) -> PostResponse:
+def create_post(post: PostResponse) -> PostResponse:
     new_post = {"title": post.title, "content": post.content}
     text_posts[max(text_posts.keys()) + 1] = new_post
     return new_post
