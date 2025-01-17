@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, File, UploadFile, Form, Depends
 from sqlalchemy import create_engine, text
 from app.schemas import PostResponse
 from app.db import Post, create_db_and_tables, get_async_session
@@ -17,3 +17,8 @@ async def lifespan(app: FastAPI):
 # create a fastapi object
 app = FastAPI(lifespan=lifespan)
 
+
+
+
+@app.post("/upload")
+async def upload_file()
