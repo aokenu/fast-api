@@ -33,4 +33,5 @@ async def upload_file(
         file_name="dummy name"
     )
 
-    
+    session.add(post)
+    await session.commit()
