@@ -24,5 +24,6 @@ app = FastAPI(lifespan=lifespan)
 async def upload_file(
     file: UploadFile = File(...),
     caption: str = Form(""),
-    session = AsyncSession = Depends(get_async_session)
-)
+    session: AsyncSession = Depends(get_async_session)
+):
+    pass
