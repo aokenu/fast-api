@@ -36,3 +36,4 @@ async def upload_file(
     session.add(post)
     await session.commit()
     await session.refresh(post)
+    return post
