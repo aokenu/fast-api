@@ -45,4 +45,4 @@ async def upload_file(
 async def get_feed(
     session: AsyncSession = Depends(get_async_session)
 ):
-    result = await session.execute(select(Post).)
+    result = await session.execute(select(Post).order_by(Post.created_at.desc()))
