@@ -4,6 +4,7 @@ from app.schemas import PostResponse
 from app.db import Post, create_db_and_tables, get_async_session
 from sqlalchemy.ext.asyncio import AsyncSession
 from contextlib import asynccontextmanager
+from sqlalchemy import select
 
 
 
@@ -37,3 +38,11 @@ async def upload_file(
     await session.commit()
     await session.refresh(post)
     return post
+
+
+
+@app.get("/feed")
+async def get_feed(
+    session: AsyncSession = Depends(get_async_session)
+):
+    result = await session.execute(select(Post).)
