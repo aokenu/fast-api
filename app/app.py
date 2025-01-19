@@ -52,5 +52,12 @@ async def get_feed(
     posts_data = []
     for post in posts:
         posts_data.append(
-            
+            {
+                "id": str(post.id),
+                "caption": post.caption,
+                "url": post.url,
+                "file_type": post.file_type,
+                "file_name": post.file_name,
+                "created_at": post.created_at.isoformat()
+            }
         )
