@@ -61,3 +61,5 @@ async def get_feed(
                 "created_at": post.created_at.isoformat()
             }
         )
+
+    return {"posts": posts_data}
