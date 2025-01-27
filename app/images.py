@@ -5,4 +5,6 @@ import os
 
 load_dotenv()
 
-imagekit = ImageKit(...)
+imagekit = ImageKit(
+    
+)
