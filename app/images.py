@@ -7,6 +7,6 @@ load_dotenv()
 
 imagekit = ImageKit(
     private_key=os.getenv("IMAGEKIT_PRIVATE_KEY"),
-    public_key=os.getenv("public_MhZwgr9l9Q9A25dRxgL+UhxaD5A="),
+    public_key=os.getenv("IMAGEKEY_PUBLIC_KEY"),
     url_endpoint=os.getenv("https://ik.imagekit.io/vmucgzqtjs")
 )
