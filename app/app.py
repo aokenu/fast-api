@@ -5,6 +5,7 @@ from app.db import Post, create_db_and_tables, get_async_session
 from sqlalchemy.ext.asyncio import AsyncSession
 from contextlib import asynccontextmanager
 from sqlalchemy import select
+from app.images import imagekit
  
 
 
@@ -44,10 +45,10 @@ async def upload_file(
 ):
     # Create a new Post ORM object (not yet saved to the database)
     post = Post(
-        caption=caption,       
-        url="dummy url",        
-        file_type="photo",     
-        file_name="dummy name" 
+        caption=caption,        # Text caption provided by the user
+        url="dummy url",        # Placeholder for where the file would be stored
+        file_type="photo",      # Hardcoded file type for now
+        file_name="dummy name"  # Placeholder file name
     )
 
     # Stage the Post object for insertion into the database
