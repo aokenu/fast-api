@@ -10,6 +10,7 @@ from imagekitio.models.UploadFileRequestOptions import UploadFileRequestOptions
 import shutil
 import os
 import uuid
+import tempfile
 
 
 
