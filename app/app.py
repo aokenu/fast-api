@@ -53,6 +53,9 @@ async def upload_file(
 temp_file_path = None
 
 
+try:
+    with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splittext(file.filename)[1]) as temp_file:
+
 
 ):
     # Create a new Post ORM object (not yet saved to the database)
