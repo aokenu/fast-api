@@ -49,6 +49,11 @@ async def upload_file(
     
     # Injects an async database session using FastAPI's dependency system
     session: AsyncSession = Depends(get_async_session)
+
+temp_file_path = None
+
+
+
 ):
     # Create a new Post ORM object (not yet saved to the database)
     post = Post(
