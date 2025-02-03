@@ -58,7 +58,9 @@ try:
         temp_file_path = temp_file.name 
         shutil.copyfileobj(file.file, temp_file)
 
-    
+    upload_result = imagekit.upload_file(
+        
+    )
 
 
 ):
