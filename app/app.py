@@ -59,6 +59,7 @@ try:
         shutil.copyfileobj(file.file, temp_file)
 
     upload_result = imagekit.upload_file(
+        file=open(temp_file_path, "rb"),
         
     )
 
