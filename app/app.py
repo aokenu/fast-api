@@ -60,6 +60,7 @@ try:
 
     upload_result = imagekit.upload_file(
         file=open(temp_file_path, "rb"),
+        file_name=file.filename,
         
     )
 
