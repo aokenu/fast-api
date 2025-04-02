@@ -63,6 +63,7 @@ try:
         file_name=file.filename,
         options=UploadFileRequestOptions(
             use_unique_file_name=True,
+            tags=["back"]
         )
     )
 
