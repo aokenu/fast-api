@@ -62,7 +62,7 @@ try:
         file=open(temp_file_path, "rb"),
         file_name=file.filename,
         options=UploadFileRequestOptions(
-            
+            use_unique_file_name=True,
         )
     )
 
