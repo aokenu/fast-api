@@ -49,28 +49,29 @@ async def upload_file(
     
     # Injects an async database session using FastAPI's dependency system
     session: AsyncSession = Depends(get_async_session)
+):
 
-temp_file_path = None
+    temp_file_path = None
 
 
-try:
-    with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splittext(file.filename)[1]) as temp_file:
-        temp_file_path = temp_file.name 
-        shutil.copyfileobj(file.file, temp_file)
+    try:
+        with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splittext(file.filename)[1]) as temp_file:
+            temp_file_path = temp_file.name 
+            shutil.copyfileobj(file.file, temp_file)
 
-    upload_result = imagekit.upload_file(
-        file=open(temp_file_path, "rb"),
-        file_name=file.filename,
-        options=UploadFileRequestOptions(
-            use_unique_file_name=True,
-            tags=["backend-upload"]
+        upload_result = imagekit.upload_file(
+            file=open(temp_file_path, "rb"),
+            file_name=file.filename,
+            options=UploadFileRequestOptions(
+                use_unique_file_name=True,
+                tags=["backend-upload"]
+            )
         )
-    )
 
     if upload_result.resonse.http_status_code == 200:
 
 
-):
+
     # Create a new Post ORM object (not yet saved to the database)
     post = Post(
         caption=caption,        # Text caption provided by the user
