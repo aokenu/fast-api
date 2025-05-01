@@ -67,6 +67,8 @@ try:
         )
     )
 
+    if upload_result.resonse.http_status_code == 200:
+
 
 ):
     # Create a new Post ORM object (not yet saved to the database)
