@@ -75,7 +75,7 @@ async def upload_file(
                 caption=caption,        # Text caption provided by the user
                 url=upload_result.url,        # Placeholder for where the file would be stored
                 file_type="video" if file.content_type.startswith("video/") else "image",      # Hardcoded file type for now
-                file_name="dummy name"  # Placeholder file name
+                file_name=upload_result.name  # Placeholder file name
             )
 
             # Stage the Post object for insertion into the database
