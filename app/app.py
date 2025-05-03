@@ -89,6 +89,9 @@ async def upload_file(
             
             # Return the newly created Post object as the API response
             return post
+    except Exception as e:
+        raise HTTPException(status_code=500, details=str(e))
+    finally:
 
 
 
