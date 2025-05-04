@@ -68,7 +68,7 @@ async def upload_file(
             )
         )
 
-        if upload_result.resonse.http_status_code == 200:
+        if upload_result.response_metadata.http_status_code == 200:
 
             # Create a new Post ORM object (not yet saved to the database)
             post = Post(
