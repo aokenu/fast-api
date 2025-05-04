@@ -92,6 +92,7 @@ async def upload_file(
     except Exception as e:
         raise HTTPException(status_code=500, details=str(e))
     finally:
+        if temp_file_path and os.path.exists(temp_file_path):
 
 
 
