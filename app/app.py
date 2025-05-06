@@ -58,7 +58,7 @@ async def upload_file(
             temp_file_path = temp_file.name 
             shutil.copyfileobj(file.file, temp_file)
 
-        upload_result = imagekit.upload_file(
+        upload_result = imagekit.upload(
             file=open(temp_file_path, "rb"),
             file_name=file.filename,
             options={
@@ -89,7 +89,7 @@ async def upload_file(
             # Return the newly created Post object as the API response
             return post
     except Exception as e:
-        raise HTTPException(status_code=500, details=str(e))
+        raise HTTPException(status_code=500, detail=str(e))
     finally:
         if temp_file_path and os.path.exists(temp_file_path):
             os.unlink(temp_file_path)
